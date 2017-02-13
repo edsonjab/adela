@@ -3,7 +3,7 @@
 = active_link_to 'Plan de Apertura', inventories_datasets_path, active: :inclusive, wrap_tag: :li
 = active_link_to 'Catálogo de Datos', organization_catalogs_path(current_organization), active: [['catalogs', 'datasets', 'distributions'], []], wrap_tag: :li
 %li
-  = link_to 'Guía', 'http://datos.gob.mx/guia/', target: '_blank'
+  = link_to 'Guía', 'https://datos.gob.mx/guia/', target: '_blank'
 %li.dropdown
   %a.dropdown-toggle{ href: '#', 'data-toggle': 'dropdown', role: 'button', 'aria-haspopup': 'true', 'aria-expanded': 'false' }
     = current_user.name

@@ -11,14 +11,14 @@ La Administradora (y aceleradora) de la Apertura en México.
 
 ![adelitas](http://culturacolectiva.com/wp-content/uploads/2013/10/adelitas.gif)
 
-[ADELA](http://adela.datos.gob.mx) es la plataforma para publicar en [datos.gob.mx](http://datos.gob.mx) y darle seguimiento a la iniciativa de datos abiertos.
+[ADELA](http://adela.datos.gob.mx) es la plataforma para publicar en [datos.gob.mx](https://datos.gob.mx) y darle seguimiento a la iniciativa de datos abiertos.
 
-El objetivo de ADELA por un lado es **simplificar el proceso de publicación en [datos.gob.mx](http://datos.gob.mx)** al funcionario, y por otro lado **ofrecer al ciudadano un tablero de seguimiento** de la publicación actual y futura de datos abiertos.
+El objetivo de ADELA por un lado es **simplificar el proceso de publicación en [datos.gob.mx](https://datos.gob.mx)** al funcionario, y por otro lado **ofrecer al ciudadano un tablero de seguimiento** de la publicación actual y futura de datos abiertos.
 
 Los administradores de datos abiertos pueden:
 
 1. Cargar sus catálogos de datos
 2. Definir su plan de apertura institucional
-3. Publicar en [datos.gob.mx](http://datos.gob.mx)
+3. Publicar en [datos.gob.mx](https://datos.gob.mx)
 
 ¿Tienes dudas? visita la [Wiki](https://github.com/mxabierto/adela/wiki)

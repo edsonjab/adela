@@ -8,7 +8,7 @@ class CatalogSerializer < ActiveModel::Serializer
     data[:description] = ''
     data[:homepage] = ''
     data[:language] = 'es'
-    data[:license] = 'http://datos.gob.mx/libreusomx/'
+    data[:license] = 'https://datos.gob.mx/libreusomx/'
     data.merge super
   end
 

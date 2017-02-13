@@ -4,7 +4,7 @@ class DistributionSerializer < ActiveModel::Serializer
              :publishDate
 
   def license
-    'http://datos.gob.mx/libreusomx/'
+    'https://datos.gob.mx/libreusomx/'
   end
 
   def downloadURL

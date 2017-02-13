@@ -67,6 +67,7 @@ group :development, :test do
   gem 'thin'
   gem 'timecop'
   gem 'pry'
+  gem 'puma'
 end
 
 group :test do
