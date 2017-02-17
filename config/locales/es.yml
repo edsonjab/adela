@@ -98,6 +98,18 @@ es:
               taken: 'Ya existe un recurso con el mismo nombre, es posible que otra Institución lo tenga registrado y es necesario usar otro.'
             download_url:
               taken: 'Existe otro recurso con la misma URL de descarga.'
+        organization:
+          attributes:
+            title:
+              blank: "Nombre no puede estar en blanco."
+              taken: "Existe una organización con el mismo nombre."
+            description: 
+              blank: 'Descripción no puede estar en blanco.'
+            landing_page:
+              blank: 'Sitio Web no puede estar en blanco.'
+              taken: 'Existe organización con el mismo sitio web'
+            gov_type:
+              blank: 'Tipo de Gobierno no puede estar en blanco.'
     attributes:
       user:
         name: "Nombre"

@@ -21,6 +21,32 @@ describe Organization do
       organization.title = nil
       expect(organization).not_to be_valid
     end
+
+    it 'should not be valid without a description' do
+      organization.description = nil
+      expect(organization).not_to be_valid
+    end
+
+    it 'should not be valid without a landing_page' do
+      organization.landing_page = nil
+      expect(organization).not_to be_valid
+    end
+
+    it 'should not be valid without a gov_type' do
+      organization.gov_type = nil
+      expect(organization).not_to be_valid
+    end
+
+    it 'should not be valid with duplicated title' do
+      new_organization = build(:organization, title: organization.title)
+      expect(new_organization).not_to be_valid
+    end
+
+    it 'should not be valid with duplicated landing_page' do
+      new_organization = build(:organization, landing_page: organization.landing_page)
+      expect(new_organization).not_to be_valid
+    end
+    
   end
 
   context 'defaults' do

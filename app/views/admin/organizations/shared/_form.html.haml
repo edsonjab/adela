@@ -1,16 +1,18 @@
+- if @organization.errors.any?
+  = render partial: '/layouts/shared/errors', locals: { errors: @organization.errors }
 = nested_form_for([:admin, @organization], html: { id: 'edit_organization' }) do |f|
   .form-group
     = f.label :title
-    = f.text_field :title, class: 'form-control'
+    = f.text_field :title, class: 'form-control', required: true
   .form-group
     = f.label :description
-    = f.text_field :description, class: 'form-control'
+    = f.text_field :description, class: 'form-control', required: true
   .form-group
     = f.label :landing_page
     = f.url_field :landing_page, class: 'form-control'
   .form-group
     = f.label :gov_type
-    = f.select :gov_type, options_for_gov_types_select(@organization), { include_blank: true }, { class: 'form-control' }
+    = f.select :gov_type, options_for_gov_types_select(@organization), { include_blank: true }, { class: 'form-control', required: true}
   - unless @organization.new_record?
     .form-group
       = f.label :administrator

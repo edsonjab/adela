@@ -146,6 +146,7 @@ feature Admin, 'manages organizations:' do
     fill_in('Nombre', with: organization_attributes[:title])
     fill_in('Descripción', with: organization_attributes[:description])
     fill_in('Sitio Web', with: organization_attributes[:landing_page])
+    find('select#organization_gov_type').find("option[value='#{organization_attributes[:gov_type]}']").select_option
     find(:css, '#organization_ministry').set(true)
     click_on 'Guardar'
 

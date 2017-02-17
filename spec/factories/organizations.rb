@@ -3,6 +3,7 @@ FactoryGirl.define do
     title { Faker::Company.name }
     description { Faker::Company.catch_phrase }
     landing_page { Faker::Internet.url }
+    gov_type { ['federal', 'state', 'municipal', 'autonomous'].sample }
 
     factory :federal_organization do
       gov_type { 'federal' }
