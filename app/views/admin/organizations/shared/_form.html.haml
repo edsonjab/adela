@@ -9,7 +9,7 @@
     = f.text_field :description, class: 'form-control', required: true
   .form-group
     = f.label :landing_page
-    = f.url_field :landing_page, class: 'form-control'
+    = f.url_field :landing_page, class: 'form-control', required: true
   .form-group
     = f.label :gov_type
     = f.select :gov_type, options_for_gov_types_select(@organization), { include_blank: true }, { class: 'form-control', required: true}
