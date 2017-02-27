@@ -68,6 +68,7 @@ group :development, :test do
   gem 'timecop'
   gem 'pry'
   gem 'puma'
+  gem 'vcr', '2.2.5'
 end
 
 group :test do
