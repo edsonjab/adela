@@ -1,4 +1,6 @@
 = form_for([:admin, @user]) do |f|
+  - if @user.errors.any?
+    = render partial: '/layouts/shared/errors', locals: { errors: @user.errors }
   .form-group
     = f.label :name
     = f.text_field :name, class: 'form-control'

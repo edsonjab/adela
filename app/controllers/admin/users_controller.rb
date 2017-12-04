@@ -32,10 +32,10 @@ module Admin
       @user = User.find(params[:id])
       if @user.update(user_params)
         flash[:notice] = I18n.t('flash.notice.user.update')
+        redirect_to admin_users_path        
       else
-        flash[:alert] = I18n.t('flash.alert.user.update')
+        render 'edit'
       end
-      redirect_to admin_users_path
     end
 
     def destroy
@@ -92,10 +92,10 @@ module Admin
       @user = User.find(params[:id])
       if @user.update(update_user_password_params)
         flash[:notice] = I18n.t('flash.notice.user.update_password')
+        redirect_to admin_users_path
       else
-        flash[:alert] = I18n.t('flash.alert.user.update_password')
+        render 'edit_password'
       end
-      redirect_to admin_users_path
     end
 
     private
