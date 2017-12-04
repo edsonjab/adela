@@ -14,14 +14,14 @@ module Admin
     end
 
     def create
-      user = User.new(user_params)
-      create_user_and_send_password(user)
-      if user.new_record?
-        flash[:alert] = I18n.t('flash.alert.user.create')
-      else
+      @user = User.new(user_params)
+      create_user_and_send_password(@user)
+      if @user.new_record?
+        render 'new'
+      else      
         flash[:notice] = I18n.t('flash.notice.user.create')
+        redirect_to admin_users_path
       end
-      redirect_to admin_users_path
     end
 
     def edit
