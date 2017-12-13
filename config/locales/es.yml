@@ -118,6 +118,7 @@ es:
       user:
         name: "Nombre"
         email: "Correo electrónico"
+        organization: "Organización"
         password: "Contraseña"
         password_confirmation: "Confirmación de contraseña"
         current_password: "Contraseña actual"
