@@ -41,7 +41,7 @@ class Dataset < ActiveRecord::Base
 
   def keywords
     keywords = []
-    keywords.push(*keyword.split(','))
+    keywords.push(*keyword&.split(','))
     keywords.push(*sectors.split(','))
     keywords.compact.join(',')
   end
