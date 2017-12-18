@@ -61,7 +61,7 @@
               %td
               %td.nested
                 .distribution-title= distribution.title
-                -if distribution.format?
+                - if distribution.format?
                   %span.label.label-default.media-type
                     = distribution.format
               %td
