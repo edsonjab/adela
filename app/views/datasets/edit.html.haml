@@ -18,17 +18,17 @@
             = f.label :accrual_periodicity, class: 'control-label'
             = f.select :accrual_periodicity, iso8601_repeating_interval_options_for_select(f.object.accrual_periodicity), {}, required: true, class: 'form-control ', 'data-toggle': 'tooltip', title: "#{t('tooltip.dataset.accrual_periodicity')}"
         .col-xs-6
-          .form-group.required
+          .form-group
             = f.label 'Fecha de publicación', class: 'control-label'
-            = f.text_field :publish_date, 'data-placement': 'right', 'data-container':'body', value: f.object.publish_date&.strftime('%F'), required: true, class: 'datepicker form-control dpDate', 'data-toggle': 'tooltip', title: "#{t('tooltip.dataset.publish_date')}"
+            = f.text_field :publish_date, 'data-placement': 'right', 'data-container':'body', value: f.object.publish_date&.strftime('%F'), class: 'datepicker form-control dpDate', 'data-toggle': 'tooltip', title: "#{t('tooltip.dataset.publish_date')}"
       .form-group
         = f.label :contact_name, class: 'control-label'
         = f.text_field :contact_name, class: 'form-control', 'data-toggle': 'tooltip', title: "#{t('tooltip.dataset.contact_name')}"
       .row
         .col-xs-6
-          .form-group.required
+          .form-group
             = f.label :contact_position, 'Cargo del responsable', class: 'control-label'
-            = f.text_field :contact_position, class: 'form-control', 'data-toggle': 'tooltip', title: "#{t('tooltip.dataset.contact_position')}", required: true
+            = f.text_field :contact_position, class: 'form-control', 'data-toggle': 'tooltip', title: "#{t('tooltip.dataset.contact_position')}"
         .col-xs-6
           .form-group.required
             = f.label :mbox, 'Correo del responsable', class: 'control-label'
@@ -48,10 +48,10 @@
             = f.label :spatial
             = f.text_field :spatial, class: 'form-control', 'data-toggle': 'tooltip', title: "#{t('tooltip.dataset.spatial')}"
         .col-xs-6
-          .form-group.required
+          .form-group
             = f.label :dataset_sectors, 'Categoría en datos.gob.mx', class: 'control-label'
             = f.fields_for :dataset_sector do |sector_form|
-              = sector_form.select :sector_id, options_for_sectors_select, { include_blank: true }, { class: 'form-control', 'data-toggle': 'tooltip', title: "#{t('tooltip.dataset.sector')}", required: true }
+              = sector_form.select :sector_id, options_for_sectors_select, { include_blank: true }, { class: 'form-control', 'data-toggle': 'tooltip', title: "#{t('tooltip.dataset.sector')}" }
       .form-group.required
         = f.label :data_dictionary, 'URL para consultar diccionario de datos', class: 'control-label'
         = f.url_field :data_dictionary, class: 'form-control', 'data-toggle': 'tooltip', title: "#{t('tooltip.dataset.data_dictionary')}", required: true

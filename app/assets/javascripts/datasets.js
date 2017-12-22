@@ -21,8 +21,8 @@ $(function () {
         }
     };
 
-    setRequiredFields();
-    $('#dataset_public_access').change(setRequiredFields);
+    //setRequiredFields();
+    //$('#dataset_public_access').change(setRequiredFields);
 });
 
 $(document).on('nested:fieldAdded', function(event){
