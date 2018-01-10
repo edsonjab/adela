@@ -21,7 +21,7 @@ Adela::Application.routes.draw do
       end
 
       resources :catalogs, only: [:index], shallow: true do
-        get 'check', on: :collection
+        post 'check', on: :collection
         put 'publish', on: :member
 
         resources :datasets, shallow: true do
