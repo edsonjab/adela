@@ -18,8 +18,8 @@ class Distribution < ActiveRecord::Base
   after_commit :update_dataset_metadata
 
   with_options on: :ckan do |distribution|
-    distribution.validates :title, :download_url, :publish_date,
-                           :format, :modified, presence: true
+    distribution.validates :title, :download_url,
+                           :format, presence: true
   end
 
   alias_attribute :identifier, :slug

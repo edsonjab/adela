@@ -37,7 +37,7 @@ describe Distribution do
 
     it 'should not be valid without a description' do
       distribution.description = nil
-      expect(distribution).not_to be_valid(:ckan)
+      expect(distribution).to be_valid(:ckan)
     end
 
     it 'should not be valid without a download_url' do
@@ -47,7 +47,7 @@ describe Distribution do
 
     it 'should not be valid without a publish_date' do
       distribution.publish_date = nil
-      expect(distribution).not_to be_valid(:ckan)
+      expect(distribution).to be_valid(:ckan)
     end
 
     it 'should not be valid without a format' do
@@ -57,7 +57,7 @@ describe Distribution do
 
     it 'should not be valid without a modified' do
       distribution.modified = nil
-      expect(distribution).not_to be_valid(:ckan)
+      expect(distribution).to be_valid(:ckan)
     end
 
     it 'should be valid without a temporal' do
