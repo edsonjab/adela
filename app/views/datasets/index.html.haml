@@ -40,7 +40,8 @@
                 %td.center
                   = "#{documented_distributions(dataset).size} de #{dataset.distributions.size}"
                 %td.center
-                  = dataset.publish_date.to_date.strftime('%F')
+                  - if dataset.publish_date?
+                    = dataset.publish_date.to_date.strftime('%F')
                 %td.col-md-3
                   %ul.nav.nav-pills.nav-justified
                     %li{role: 'presentation'}

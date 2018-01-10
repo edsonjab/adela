@@ -106,7 +106,7 @@ describe Dataset do
 
     it 'should not be valid without an contact_position' do
       dataset.contact_position = nil
-      expect(dataset).not_to be_valid(:ckan)
+      expect(dataset).to be_valid(:ckan)
     end
 
     it 'should not be valid without a mbox' do
@@ -122,39 +122,41 @@ describe Dataset do
 
     it 'should not be valid without the sector field' do
       dataset.sector = nil
-      expect(dataset).not_to be_valid(:ckan)
+      expect(dataset).to be_valid(:ckan)
     end
 
     it 'should not be valid without the keyword field' do
       dataset.keyword = nil
-      expect(dataset).not_to be_valid(:ckan)
+      expect(dataset).to be_valid(:ckan)
     end
 
     it 'should not be valid without the data_dictionary field' do
       dataset.data_dictionary = nil
-      expect(dataset).not_to be_valid(:ckan)
+      expect(dataset).to be_valid(:ckan)
     end
 
     it 'should not be valid without a publish_date' do
       dataset.publish_date = nil
-      expect(dataset).not_to be_valid(:ckan)
+      expect(dataset).to be_valid(:ckan)
     end
   end
 
   describe '#state' do
     let!(:dataset) { create(:dataset_with_sector) }
 
-    it 'should be broke by default' do
-      dataset.keyword = nil # this makes valid?(:ckan) => false
+    # this field don't be mandatory
+    xit 'should be refined by default' do
+      dataset.keyword = nil 
       dataset.save
-      expect(dataset.state).to eql('broke')
+      expect(dataset.state).to eql('refined')
     end
 
     it 'should be documented if valid?(:ckan)' do
       expect(dataset.state).to eql('documented')
     end
 
-    it 'should be refining if brokes after published' do
+     # this field don't be mandatory
+    xit 'should be refining if brokes after published' do
       dataset.update_attribute(:state, 'published')
       dataset.keyword = nil # this makes valid?(:ckan) => false
       dataset.save
