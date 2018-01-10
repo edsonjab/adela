@@ -21,6 +21,7 @@ module Concerns
     end
 
     def dataset_state_description(dataset)
+      console.log(dataset)
       if dataset.distributions.where.not(state: %w(broke refining)).any?
         'Listo para publicar'
       else
