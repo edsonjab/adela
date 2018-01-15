@@ -61,8 +61,8 @@
                   = distribution_form.label :publish_date, class: 'control-label'
                   = distribution_form.text_field :publish_date, class: 'datepicker publish-date form-control', 'data-toggle': 'tooltip', title: "#{t('tooltip.distribution.publish_date')}", 'data-placement': 'bottom'
               .col-xs-6
-                .form-group
-                  = distribution_form.hidden_field :media_type, class: 'form-control media_type'
+                .form-group.required
+                  = distribution_form.hidden_field :media_type, required: true, class: 'form-control media_type'
             .form-group.proprietary-format.hidden
               = render '/shared/components/proprietary_format_alert'
             .form-group
