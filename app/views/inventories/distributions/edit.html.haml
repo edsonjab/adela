@@ -21,9 +21,9 @@
         = f.label :media_type, class: 'control-label'
         = select_tag :media_type_select, options_for_media_type, class: 'form-control', 'data-toggle': 'tooltip', title: "#{t('tooltip.distribution.media_type_select')}"
         = f.hidden_field :media_type, value: f.object.media_type, class: 'form-control', 'data-toggle': 'tooltip', title: "#{t('tooltip.distribution.media_type')}"
-      .form-group
+      .form-group.required
         = f.label :format, class: 'control-label'
-        = f.text_field :format, value: f.object.format, class: 'form-control'
+        = f.text_field :format, required: true, value: f.object.format, class: 'form-control'
       .form-group.proprietary-format.hidden
         = render '/shared/components/proprietary_format_alert'
       .form-group.required
