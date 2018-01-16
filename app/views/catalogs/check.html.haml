@@ -28,7 +28,7 @@
                     = hidden_field_tag 'catalog[dataset_ids][]', dataset.id
                     = dataset.title
                 %td.center
-                  = dataset.publish_date&.to_date.strftime('%F')
+                  = dataset.publish_date&.to_date&.strftime('%F')
                 %td.col-md-3
                   %ul.nav.nav-pills.nav-justified
                     %li{role: 'presentation'}
