@@ -1,7 +1,7 @@
 - breadcrumb :catalog
 .loading.spinner
 %h3 Documenta tus Conjuntos y Recursos de Datos Abiertos
-= form_for @catalog, url: check_organization_catalogs_path(current_organization.catalog), method: :get do |f|
+= form_for @catalog, url: check_organization_catalogs_path(current_organization.catalog), method: :post do |f|
   .row
     .col-md-9
       %p
