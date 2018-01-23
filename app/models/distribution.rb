@@ -3,6 +3,7 @@ class Distribution < ActiveRecord::Base
   include DCATCommons
   include FriendlyId
   include Auditable
+  include DatasetsHelper
 
   friendly_id :title, use: [:slugged, :finders]
 
@@ -34,7 +35,8 @@ class Distribution < ActiveRecord::Base
         '¿Tiene datos privados?': dataset.public_access ? 'Publico' : 'Privado',
         'Razón por la cual los datos son privados': nil,
         '¿En qué plataforma, tecnología, programa o sistema se albergan?': media_type,
-        'Fecha estimada de publicación en datos.gob.mx': dataset.publish_date&.strftime('%F')
+        'Fecha estimada de publicación en datos.gob.mx': dataset.publish_date&.strftime('%F'),
+        'Frecuencia con la que actualizan': accrual_periodicity_translate(dataset.accrual_periodicity)
       }
     else
       attributes
