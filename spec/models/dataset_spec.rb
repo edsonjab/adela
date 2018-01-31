@@ -132,7 +132,7 @@ describe Dataset do
 
     it 'should not be valid without the data_dictionary field' do
       dataset.data_dictionary = nil
-      expect(dataset).to be_valid(:ckan)
+      expect(dataset).not_to be_valid(:ckan)
     end
 
     it 'should not be valid without a publish_date' do
