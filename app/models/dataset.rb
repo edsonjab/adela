@@ -26,8 +26,8 @@ class Dataset < ActiveRecord::Base
   end
 
   with_options on: :ckan do |dataset|
-    dataset.validates :title, :description, :accrual_periodicity,
-                      :mbox, presence: true
+    dataset.validates :title, :description, :accrual_periodicity, :mbox, 
+                      :data_dictionary, presence: true
   end
 
   def identifier
