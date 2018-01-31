@@ -52,7 +52,7 @@
             = f.label :dataset_sectors, 'Categoría en datos.gob.mx', class: 'control-label'
             = f.fields_for :dataset_sector do |sector_form|
               = sector_form.select :sector_id, options_for_sectors_select, { include_blank: true }, { class: 'form-control', 'data-toggle': 'tooltip', title: "#{t('tooltip.dataset.sector')}" }
-      .form-group.rquired
+      .form-group.required
         = f.label :data_dictionary, 'URL para consultar diccionario de datos', class: 'control-label'
         = f.url_field :data_dictionary, required: true, class: 'form-control', 'data-toggle': 'tooltip', title: "#{t('tooltip.dataset.data_dictionary')}"
       .form-group
