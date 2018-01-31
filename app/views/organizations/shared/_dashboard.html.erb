@@ -430,20 +430,21 @@ $('#top-5-datos').dataTable({
         $('td:eq(1)', nRow).addClass("text-center");
     },
     "ajax": {
-    "url": '<%= OPI_DASHBOARD_URL_API %>recursos-mas-descargados/' + orgName + '/',
-    "type": 'POST',
-    "dataSrc": function (json) {
-        if(json.recursos === undefined || json.recursos === null){
-          alert('Sentimos los incovenientes. Estamos actualizando los datos. Intenta mas tarde.');
-          return false;
-        }
+      "url": '<%= OPI_DASHBOARD_URL_API %>recursos-mas-descargados/' + orgName + '/',
+      "type": 'POST',
+      "dataSrc": function (json) {
+          if(json.recursos === undefined || json.recursos === null){
+            //alert('Sentimos los incovenientes. Estamos actualizando los datos. Intenta mas tarde.');
+            return false;
+          }
 
-        console.log(json.recursos);
-        return json.recursos;
-    }
-    },"error": function(){
-    alert('Sentimos los incovenientes. Estamos actualizando los datos. Intenta mas tarde.');
-    return false;
+          console.log(json.recursos);
+          return json.recursos;
+      },
+      "error": function(){
+        //alert('Sentimos los incovenientes. Estamos actualizando los datos. Intenta mas tarde.');
+        return false;
+      }
     },
     "columns": [
         { "data": "recurso", width: 400, class: "recurso-col" },
