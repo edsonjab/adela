@@ -178,7 +178,7 @@ es:
         update: "Ocurrió un error al actualizar el usuario."
         import: "Ocurrió un error al crear usuarios. Verificar archivo CSV."
         update_password: "Ocurrió un error al actualizar la contraseña."
-      organizaion:
+      organization:
         create: "Ocurrió un error al crear la organización."
         update: "Ocurrió un error al actualizar la organización."
   agreement:
