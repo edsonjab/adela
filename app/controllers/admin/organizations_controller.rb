@@ -16,6 +16,7 @@ module Admin
       @organization.build_catalog
       if @organization.save
         flash[:notice] = I18n.t('flash.notice.organization.create')
+        redirect_to admin_organizations_path
       else
         # flash[:alert] = I18n.t('flash.alert.organization.create')
         render 'new'
