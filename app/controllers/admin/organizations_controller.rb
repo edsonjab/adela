@@ -17,9 +17,10 @@ module Admin
       if @organization.save
         flash[:notice] = I18n.t('flash.notice.organization.create')
       else
-        flash[:alert] = I18n.t('flash.alert.organization.create')
+        # flash[:alert] = I18n.t('flash.alert.organization.create')
+        render 'new'
       end
-      redirect_to admin_organizations_path
+      
     end
 
     def edit
