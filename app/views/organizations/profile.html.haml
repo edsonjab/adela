@@ -1,7 +1,7 @@
 .container
   .card
     %h3.title Editar Organizaci&oacute;n
-    %h5.subtitle= @organization.title.upcase
+    %h4.subtitle= @organization.title
     = form_for(@organization, html: { id: 'edit_organization' }) do |f|
       .foorm-group
         = f.label :title
