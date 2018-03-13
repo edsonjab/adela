@@ -8,9 +8,9 @@
       = f.hidden_field :reset_password_token
       .form-group
         = f.label :password, 'Nueva contraseña'
-        = f.password_field :password, autofocus: true, class: 'form-control'
+        = f.password_field :password, autofocus: true, class: 'form-control', required: true
       .form-group
-        = f.label :password_confirmation, 'Confirma la nueva contraseña'
+        = f.label :password_confirmation, 'Confirma la nueva contraseña', required: true
         = f.password_field :password_confirmation, class: 'form-control'
       .form-group
         = f.submit 'Cambiar mi contraseña', class: 'btn btn-primary'
