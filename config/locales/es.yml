@@ -75,7 +75,7 @@ es:
           attributes:
             email:
               blank: "no puede estar en blanco."
-              taken: "ya registrado."
+              taken: ": ya registrado."
             password:
               too_short: "es demasiado corta."
               blank: "no puede estar en blanco."
@@ -89,7 +89,7 @@ es:
         dataset:
           attributes:
             title:
-              taken: 'Ya existe un conjunto con el mismo nombre, es posible que otra Institución lo tenga registrado y es necesario usar otro.'
+              taken: ': Ya existe un conjunto con el mismo nombre, es posible que otra Institución lo tenga registrado y es necesario usar otro.'
             distributions:
               blank: 'Un conjunto de datos debe de contener al menos un Recurso de Datos.'
             temporal:
@@ -97,21 +97,21 @@ es:
         distribution:
           attributes:
             title:
-              taken: 'Ya existe un recurso con el mismo nombre, es posible que otra Institución lo tenga registrado y es necesario usar otro.'
+              taken: ': Ya existe un recurso con el mismo nombre, es posible que otra Institución lo tenga registrado y es necesario usar otro.'
             download_url:
-              taken: 'Existe otro recurso con la misma URL de descarga.'
+              taken: ': Existe otro recurso con la misma URL de descarga.'
             temporal:
               invalid: 'La fecha del inicio del período de tiempo cubierto debe ser menor al fin del periodo.'
         organization:
           attributes:
             title:
               blank: "Nombre no puede estar en blanco."
-              taken: "Existe una organización con el mismo nombre."
+              taken: ": Existe una organización con el mismo nombre."
             description: 
               blank: 'Descripción no puede estar en blanco.'
             landing_page:
               blank: 'Sitio Web no puede estar en blanco.'
-              taken: 'Existe organización con el mismo sitio web'
+              taken: ': Existe organización con el mismo sitio web'
             gov_type:
               blank: 'Tipo de Gobierno no puede estar en blanco.'
     attributes:

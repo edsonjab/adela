@@ -4,5 +4,5 @@
     %li= link_to 'Organizaciones', admin_organizations_path
     %li.active= link_to 'Editar', edit_admin_organization_path(@organization)
   .card
-    %h3.title= "Editar #{@organization.title}"
+    %h3.title= "Editar #{@title}"
     = render 'admin/organizations/shared/form'
