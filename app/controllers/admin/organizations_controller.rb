@@ -26,12 +26,14 @@ module Admin
 
     def edit
       @organization = Organization.friendly.find(params[:id])
+      @title = @organization.title
       @organization.build_administrator unless @organization.administrator
       @organization.build_liaison unless @organization.liaison
     end
 
     def update
       @organization = Organization.find(params[:id])
+      @title = @organization.title
       if @organization.update(organization_params)
         flash[:notice] = I18n.t('flash.notice.organization.update')
         redirect_to admin_organizations_path
