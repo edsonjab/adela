@@ -4,4 +4,5 @@ class DesignationFile < ActiveRecord::Base
 
   mount_uploader :file, DesignationFileUploader
   validates_presence_of :file
+  validates_format_of :file,  :with => %r{\.(txt|doc|docx|xlsx|xsls|pdf)}i
 end

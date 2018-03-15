@@ -11,12 +11,6 @@
         .form-group.required
           %label.strong Selecciona el archivo de la Minuta de Autorizaci&oacute;n del Grupo de Trabajo
           = memo_file_form.file_field :file
-      - if current_organization.ministry?
-        = f.fields_for :ministry_memo_files, current_organization.ministry_memo_files.build  do |ministry_memo_file_form|
-          .form-group.required
-            %label.strong Selecciona el archivo de la Minuta del Subgrupo de Fomento al Uso
-
-            = ministry_memo_file_form.file_field :file
       .form-group
         %button.btn.btn-primary{ type: 'submit' } Subir documentos
   .col-md-3
@@ -76,34 +70,6 @@
                       %span.icon.icon-right
                         = inline_svg 'download-green.svg'
                       Descargar
-- if current_organization.ministry?
-  .row
-    .col-md-9
-      %h5 Minutas del Subgrupo de Fomento al Uso
-      .table-responsive
-        %table.table
-          %thead.catalog-header
-            %tr
-              %th Nombre
-              %th Fecha
-              %th Tamaño
-              %th
-          %tbody
-            - current_organization.ministry_memo_files.select(&:persisted?).each do |ministry_memo_file|
-              %tr.active
-                %td
-                  = link_to File.basename(ministry_memo_file.file.path), ministry_memo_file.file.url, class: 'semibold green'
-                %td
-                  = ministry_memo_file.created_at.strftime('%F')
-                %td
-                  = number_to_human_size(ministry_memo_file.file.size)
-                %td.col-md-3
-                  %ul.nav.nav-pills.nav-justified
-                    %li{role: 'presentation'}
-                      = link_to ministry_memo_file.file.url do
-                        %span.icon.icon-right
-                          = inline_svg 'download-green.svg'
-                        Descargar
 .row.margin-top-20
   .col-md-12
     %hr

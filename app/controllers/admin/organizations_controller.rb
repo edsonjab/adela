@@ -16,26 +16,31 @@ module Admin
       @organization.build_catalog
       if @organization.save
         flash[:notice] = I18n.t('flash.notice.organization.create')
+        redirect_to admin_organizations_path
       else
-        flash[:alert] = I18n.t('flash.alert.organization.create')
+        # flash[:alert] = I18n.t('flash.alert.organization.create')
+        render 'new'
       end
-      redirect_to admin_organizations_path
+      
     end
 
     def edit
       @organization = Organization.friendly.find(params[:id])
+      @title = @organization.title
       @organization.build_administrator unless @organization.administrator
       @organization.build_liaison unless @organization.liaison
     end
 
     def update
-      organization = Organization.find(params[:id])
-      if organization.update(organization_params)
+      @organization = Organization.find(params[:id])
+      @title = @organization.title
+      if @organization.update(organization_params)
         flash[:notice] = I18n.t('flash.notice.organization.update')
+        redirect_to admin_organizations_path
       else
-        flash[:alert] = I18n.t('flash.alert.organization.update')
+        # flash[:alert] = I18n.t('flash.alert.organization.update')
+        render 'edit'
       end
-      redirect_to admin_organizations_path
     end
 
     def edit_multiple
