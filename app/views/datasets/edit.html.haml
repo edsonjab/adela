@@ -88,8 +88,9 @@
               %tr.distribution
                 %td
                   .distribution-title= distribution.title
-                  %span.label.label-default.media-type
-                    = distribution.format
+                  - if distribution.format?  
+                    %span.label.label-default.media-type
+                      = distribution.format
                 %td.center= state_description(distribution)
                 %td.center
                   %ul.nav.nav-pills.nav-justified
