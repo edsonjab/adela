@@ -9,7 +9,7 @@ defaults: &defaults
     cuatrimestral: 'R/P4M'
     semestral: 'R/P6M'
     anual: 'R/P1Y'
-    bianual: 'R/P2Y'
+    bienal: 'R/P2Y'
     quinquenal: 'R/P5Y'
     decenal: 'R/P10Y'
     irregular: 'irregular'
