@@ -5,10 +5,10 @@ class Organizations::DocumentsController < ApplicationController
   def update
     if organization_params? && current_organization.update(organization_params)
       flash[:notice] = I18n.t('flash.notice.organization.documents.update')
-    else
-      flash[:error] = I18n.t('flash.notice.organization.documents.error')
+    else 
+      flash[:error] = current_organization.errors.full_messages.join(", ")
     end
-
+          
     redirect_to organization_documents_path
     return
   end
