@@ -39,7 +39,7 @@ module Admin
 
         unless @title == params[:title]
           ShogunHarvestWorker.updateorg_async(@title, params[:title])
-
+        end
         redirect_to admin_organizations_path
       else
         # flash[:alert] = I18n.t('flash.alert.organization.update')
