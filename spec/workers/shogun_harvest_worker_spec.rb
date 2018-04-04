@@ -25,5 +25,6 @@ describe ShogunHarvestWorker do
     new_name = "presidencia"
     response = worker.updateorg(name, new_name)
     expect( response.body ).to eq("{\"Organization Updated\": \"#{new_name}\"}")
+    expect( response ).to have_http_status(200)
   end
 end
