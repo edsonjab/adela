@@ -40,7 +40,7 @@ module Admin
 
         unless @title == params[:title]
           newname = @organization.slug
-          ShogunHarvestWorker.perform_async(oldname, newname)
+          ShogunUpdateorgWorker.perform_async(oldname, newname)
         end
         redirect_to admin_organizations_path
       else

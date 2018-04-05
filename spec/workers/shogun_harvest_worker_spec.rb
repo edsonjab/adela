@@ -23,7 +23,7 @@ describe ShogunHarvestWorker do
   it 'should update organization name wiht updateorg endpoint' do
     name = "presidencia_new"
     new_name = "presidencia"
-    response = worker.updateorg(name, new_name)
+    response = ShogunUpdateorgWorker.perform_async(name, new_name)
     expect( response.body ).to eq("{\"Organization Updated\": \"#{new_name}\"}")
     expect( response ).to have_http_status(200)
   end
