@@ -34,11 +34,13 @@ module Admin
     def update
       @organization = Organization.find(params[:id])
       @title = @organization.title
+      oldname = @organization.slug
       if @organization.update(organization_params)
         flash[:notice] = I18n.t('flash.notice.organization.update')
 
         unless @title == params[:title]
-          ShogunHarvestWorker.updateorg(@title, params[:title])
+          newname = @organization.slug
+          ShogunHarvestWorker.perform_async(oldname, newname)
         end
         redirect_to admin_organizations_path
       else
