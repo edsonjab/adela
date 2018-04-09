@@ -26,9 +26,9 @@
             = f.label :accrual_periodicity, class: 'control-label'
             = f.select :accrual_periodicity, iso8601_repeating_interval_options_for_select(f.object.accrual_periodicity), {}, required: true, class: 'form-control', 'data-toggle': 'tooltip', title: "#{t('tooltip.dataset.accrual_periodicity')}"
         .col-xs-4
-          .form-group
+          .form-group.required
             = f.label :publish_date, class: 'control-label'
-            = f.text_field :publish_date, class: 'datepicker form-control', 'data-toggle': 'tooltip', title: "#{t('tooltip.dataset.publish_date')}"
+            = f.text_field :publish_date, required: true, class: 'datepicker form-control', 'data-toggle': 'tooltip', title: "#{t('tooltip.dataset.publish_date')}"
     .col-md-3
       %p.margin-top
         Un <strong>Conjunto de datos</strong> es un grupo de Recursos de Datos Abiertos que tienen un tema en común.
@@ -57,9 +57,9 @@
                   = distribution_form.text_field :format, required: true, class: 'format form-control', 'data-toggle': 'tooltip', title: "#{t('tooltip.distribution.format')}"
             .row
               .col-xs-6
-                .form-group
+                .form-group.required
                   = distribution_form.label :publish_date, class: 'control-label'
-                  = distribution_form.text_field :publish_date, class: 'datepicker publish-date form-control', 'data-toggle': 'tooltip', title: "#{t('tooltip.distribution.publish_date')}", 'data-placement': 'bottom'
+                  = distribution_form.text_field :publish_date, required: true, class: 'datepicker publish-date form-control', 'data-toggle': 'tooltip', title: "#{t('tooltip.distribution.publish_date')}", 'data-placement': 'bottom'
               .col-xs-6
                 .form-group.required
                   = distribution_form.hidden_field :media_type, required: true, class: 'form-control media_type'
