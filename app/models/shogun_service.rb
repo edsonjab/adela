@@ -7,8 +7,8 @@ class ShogunService
     post('/v1/harvest', options)
   end
 
-  def self.updateorg(oldname, newname)
-    options = { query: { newname: newname, oldname: oldname } }
+  def self.updateorg(oldname, newname, newtitle)
+    options = { query: { newname: newname, oldname: oldname, newtitle: newtitle } }
     post('/v1/updateorg', options)
   end
 
