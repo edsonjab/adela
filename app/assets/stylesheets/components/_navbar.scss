@@ -13,7 +13,8 @@
     color: $white;
     font-size: 12px;
 
-    &:hover, &:focus {
+    &:hover,
+    &:focus {
       color: $navbar-color-hover;
     }
   }
