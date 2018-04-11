@@ -6,15 +6,16 @@
     color: $light_green;
     font-weight: 300;
     font-size: 16px;
-    min-width: 220px; 
+    min-width: 220px;
   }
 
   .navbar-nav > li > a {
     color: $white;
     font-size: 12px;
 
-    &:hover,
-    &:focus { color: $navbar-color-hover; }
+    &:hover, &:focus {
+      color: $navbar-color-hover;
+    }
   }
 }
 
