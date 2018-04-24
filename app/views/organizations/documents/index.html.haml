@@ -5,11 +5,11 @@
     = form_for current_organization, url: update_organization_documents_path, method: :put do |f|
       = f.fields_for :designation_files, current_organization.designation_files.build do |designation_file_form|
         .form-group.required
-          %label.strong Selecciona el archivo del Oficio de Designación
+          %label.strong Selecciona el archivo del Oficio de Designación (.txt|.doc|.docx|.xlsx|.xls|.pdf)
           = designation_file_form.file_field :file
       = f.fields_for :memo_files, current_organization.memo_files.build  do |memo_file_form|
         .form-group.required
-          %label.strong Selecciona el archivo de la Minuta de Autorizaci&oacute;n del Grupo de Trabajo
+          %label.strong Selecciona el archivo de la Minuta de Autorizaci&oacute;n del Grupo de Trabajo (.txt|.doc|.docx|.xlsx|.xls|.pdf)
           = memo_file_form.file_field :file
       .form-group
         %button.btn.btn-primary{ type: 'submit' } Subir documentos

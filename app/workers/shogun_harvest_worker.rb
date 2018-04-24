@@ -4,4 +4,5 @@ class ShogunHarvestWorker
   def perform(catalog_url)
     ShogunService.harvest(catalog_url)
   end
+
 end

@@ -34,8 +34,14 @@ module Admin
     def update
       @organization = Organization.find(params[:id])
       @title = @organization.title
+      oldname = @organization.slug
       if @organization.update(organization_params)
         flash[:notice] = I18n.t('flash.notice.organization.update')
+
+        unless @title == params[:title]
+          newname = @organization.slug
+          ShogunUpdateorgWorker.perform_async(oldname, newname, @organization.title)
+        end
         redirect_to admin_organizations_path
       else
         # flash[:alert] = I18n.t('flash.alert.organization.update')

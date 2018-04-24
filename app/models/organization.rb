@@ -28,4 +28,8 @@ class Organization < ActiveRecord::Base
   scope :gov_type, -> gov_type { where('gov_type = ?', Organization.gov_types[gov_type]) }
 
   enum gov_type: [:federal, :state, :municipal, :autonomous]
+
+  def should_generate_new_friendly_id?
+    title_changed?
+  end
 end

@@ -18,9 +18,9 @@
             = f.label :accrual_periodicity, class: 'control-label'
             = f.select :accrual_periodicity, iso8601_repeating_interval_options_for_select(f.object.accrual_periodicity), {}, required: true, class: 'form-control ', 'data-toggle': 'tooltip', title: "#{t('tooltip.dataset.accrual_periodicity')}"
         .col-xs-6
-          .form-group
+          .form-group.required
             = f.label 'Fecha de publicación', class: 'control-label'
-            = f.text_field :publish_date, 'data-placement': 'right', 'data-container':'body', value: f.object.publish_date&.strftime('%F'), class: 'datepicker form-control dpDate', 'data-toggle': 'tooltip', title: "#{t('tooltip.dataset.publish_date')}"
+            = f.text_field :publish_date, required: true, 'data-placement': 'right', 'data-container':'body', value: f.object.publish_date&.strftime('%F'), class: 'datepicker form-control dpDate', 'data-toggle': 'tooltip', title: "#{t('tooltip.dataset.publish_date')}"
       .form-group
         = f.label :contact_name, class: 'control-label'
         = f.text_field :contact_name, class: 'form-control', 'data-toggle': 'tooltip', title: "#{t('tooltip.dataset.contact_name')}"

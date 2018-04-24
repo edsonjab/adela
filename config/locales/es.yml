@@ -69,6 +69,8 @@ es:
       catalog: "catálogo"
       organization: "organización"
       user: "usuario"
+      designation_files: oficio de designación
+      memo_files: minuta de autorización del grupo de trabajo
     errors:
       models:
         user:
@@ -114,6 +116,14 @@ es:
               taken: '- Existe organización con el mismo sitio web'
             gov_type:
               blank: 'Tipo de Gobierno no puede estar en blanco.'
+        designation_file:
+          attributes:
+            file:
+              invalid: '- El formato del archivo es incorrecto.'
+        memo_file:
+          attributes:
+            file:
+              invalid: '- El formato del archivo es incorrecto.'
     attributes:
       user:
         name: "Nombre"
@@ -146,6 +156,10 @@ es:
         sectors: "Categoría en datos.gob.mx"
         administrator: "Administrador de Datos"
         liaison: "Enlace"
+      designation_files:
+          file: "Oficio de Designación"
+      memo_files:
+          file: "Minuta de Autorización del Grupo de Trabajo"
   mailers:
     user:
       notificate_user_account_subject: "Nuevo usuario en ADELA"
